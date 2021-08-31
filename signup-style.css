@@ -1,0 +1,12 @@
+@charset "UTF-8";
+/*CSS 初期化*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*全体*/
+body{
+background-image: url(background.png);
+background-size: auto;
+background-repeat: repeat;
+}
