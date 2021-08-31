@@ -3,8 +3,8 @@ import { DB } from "https://deno.land/x/sqlite@v3.0.0/mod.ts"
 //ログインユーザーのidを取得
 const user_id = sessionStorage.getItem('userid');
 
-document.getElementById('button').addEventListener('click', function () {
-    let sport_id = this.id;
+document.getElementById('form').onsubmit = function () {
+    let sport_id = document.getElementById('input');
     /*データベースからデータを読み出す*/
     const lists = db.queryEntries("select name,place,rate from sports_table where sports = :sport", {
         sport: "sport_id"
@@ -36,4 +36,4 @@ document.getElementById('button').addEventListener('click', function () {
         table.appendChild(tr);
     }
 
-}, false);
+}
