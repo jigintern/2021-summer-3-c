@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/*CSS 初期化*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/*全体*/
+body{
+background-image: url(background.png);
+background-size: auto;
+background-repeat: repeat;
+}
+form{
+    background-color:rgba(0, 238, 255, 0.60);
+    width: 400px;
+    height: 500px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    border-radius: 40px;
+}
+form h1{
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-top: 60px;
+}
+form div{
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+#username,#passwerd{
+
+}
