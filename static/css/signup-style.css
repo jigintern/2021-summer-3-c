@@ -6,7 +6,19 @@
 }
 /*全体*/
 body{
-background-image: url(background.png);
+background-image: url(../img/background.png);
 background-size: auto;
 background-repeat: repeat;
+}
+form{
+    background-color:rgba(0, 238, 255, 0.60);
+    width: 400px;
+    height: 500px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    border-radius: 40px;
 }
