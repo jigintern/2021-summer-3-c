@@ -1,9 +1,8 @@
 import { DB } from "https://deno.land/x/sqlite@v3.0.0/mod.ts"
+
 //ログインユーザーのidを取得
-window.onload = function () {
-    let username = document.getElementById('user_name').textContent;
-    const user_id = db.queryEntries("select id from user_name where name = username", { })
-}
+const user_id = sessionStorage.getItem('userid');
+
 document.getElementById('button').addEventListener('click', function () {
     let sport_id = this.id;
     /*データベースからデータを読み出す*/
