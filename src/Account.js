@@ -10,7 +10,9 @@ export class Account {
             password TEXT,
             rate INTEGER,
             evaluation INTEGER,
-            active TEXT
+            active TEXT,
+            prefecture TEXT,
+            city TEXT
             )
         `);
 
@@ -18,14 +20,6 @@ export class Account {
             CREATE TABLE IF NOT EXISTS sports (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
-            userid INTEGER
-            )
-        `);  
-
-        this.db.query(`
-            CREATE TABLE IF NOT EXISTS places (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            place TEXT,
             userid INTEGER
             )
         `);  
@@ -50,8 +44,8 @@ export class Account {
     }
 
 
-    async add(username,password){
-        this.db.query("INSERT INTO user_data (username,password,rate,evaluation,active) VALUES(?,?,?,?,?)",[username,password,0,0,"オンライン"])
+    async add(username,password,prefecture,city){
+        this.db.query("INSERT INTO user_data (username,password,rate,evaluation,active,prefecture,city) VALUES(?,?,?,?,?,?,?)",[username,password,0,0,"オンライン",prefecture,city])
 
 
         return "次のアカウントを追加しました：\"" + username + "\"";
