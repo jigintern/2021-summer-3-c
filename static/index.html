@@ -3,21 +3,26 @@
     <head>
         <meta charset="utf-8">
         <title>login</title>
-        <link rel="stylesheet" href="css\index-style.css">
+
+        <link rel="stylesheet" href="css/index-style.css">
+
     </head>
     <body>
-        <form>
+        <form class="box" onsubmit="return false">
             <h1>login</h1>
             <!--ユーザー名入力-->
             <div>User name</div>
-            <input type="text" id="username" name="username" value=""><br>
+            <input type="text" id="text" name="username" value=""><br>
             <!--パスワード入力-->
             <div>password</div>
             <input type="password" id="password" name="password" value=""><br>
             <!--ログインボタン-->
-            <input type="submit" id="login"name="login" value="login">
+            <input type="submit" id = "submit" name="login" value="login">
+
             <!--新規登録ボタン-->
             <p><a href="signup.html">SignUp</a></p>
         </form>
+        <script type="module" src="js/login.js" async>
+        </script>
     </body>
 </html>
