@@ -6,7 +6,7 @@
 }
 /*全体*/
 body{
-background-image: url(background.png);
+background-image: url(../img/background.png);
 background-size: auto;
 background-repeat: repeat;
 }
@@ -34,6 +34,35 @@ form div{
     text-align: center;
     padding: 5px;
 }
-#username,#passwerd{
-
+#username,#password{
+width: 220px;
+height: 30px;
+border-radius: 10px;
+border: none;
+background-color: rgba(255, 255, 255, 0.80.6);
+margin-left: 90px;
+}
+#login{
+margin-top: 30px;
+margin-left: 145px;
+display: inline-block;
+border-radius: 15px;
+font-size: 40px;
+text-align: center;
+cursor: pointer;
+padding: 15px;
+background:blue;
+color: white;
+border:blue;
+}
+#login:hover{
+background:white;
+color: blue;
+border: white;
+}
+p{
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
 }
