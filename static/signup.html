@@ -7,24 +7,27 @@
         <link rel="stylesheet" href="css/signup-style.css">
     </head>
     <body>
-        <h1>signup</h1>
+        
         <form class="box" onsubmit="return false">
+            <h1>signup</h1>
             <!--ユーザー名入力-->
-            User name<input id="text" type="text" name="text" value=""><br>
+            <div>User name</div>
+            <input id="text" type="text" name="text" value=""><br>
             <!--パスワード入力-->
-            password<input id="password" type="password" name="password" value=""><br>
+            <div>password</div>
+            <input id="password" type="password" name="password" value=""><br>
 
 
-            <label>都道府県</label>
+            <div>都道府県</div>
             <select name="select_prefecture" id="select_prefecture" class="form-control">
                 <option value="">都道府県を選択</option>
             </select>
             <br>
-            <label>市区町村</label>
+            <div>市区町村</div>
             <select name="select_city" id="select_city" class="form-control">
                 <option value="">市区町村を選択</option>
             </select>
-
+            <br>
             <!--アカウント作成-->
             <input type="submit" id ="submit" name="signup" value="signup">
             
