@@ -15,7 +15,7 @@ const UserId = sessionStorage.getItem('user_id');*/
 
 function Matching(spo) {
     del();
-    let table = document.createElement('table');
+
     let tr = document.createElement('tr');
     let th1 = document.createElement('th');
     let th2 = document.createElement('th');
@@ -27,7 +27,7 @@ function Matching(spo) {
     tr.appendChild(th2);
     th3.textContent = '評価';
     tr.appendChild(th3);
-    table.appendChild(tr);
+    document.getElementById("match").appendChild(tr);
 
 
     /*データベースからデータを読み出す*/
@@ -49,13 +49,12 @@ function Matching(spo) {
         tr.appendChild(td3);
         table.appendChild(tr);
     }*/
-    document.getElementById("match").appendChild(table);
+
 }
 
 function del() {
     let table = document.getElementById('match');
-    if (table)
-        let row = table.rows.length;
-    while (row > -1)
-        table.deleteRow(0);
+    let row = table.rows.length;
+    while (row > 1)
+        table.deleteRow(row - 1);
 }
