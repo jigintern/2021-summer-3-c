@@ -12,10 +12,17 @@
             <!--ユーザー情報ボタン-->
             <p><a href="User-information.html">ユーザー情報</a></p>
             <!--サッカーマッチングボタン-->
-            <input type="submit" name="SoccerMatching" value="SoccerMatching">
-            <!--バトミントンマッチングボタン-->
-            <input type="submit" name="BadmintonMatching" value="BadmintonMatching">
+            <button type="button" onclick="Matching('soccer')">サッカー</button>
+            <!--バドミントンマッチングボタン-->
+            <button type="button" onclick="Matching('badminton')">バドミントン</button>
         </form>
+        <table id="match">
+            <tr>
+                <th>名前</th>
+                <th>場所</th>
+                <th>評価</th>
+            </tr>
+        </table>
+        <script src="js/matching.js"></script>
     </body>
-
 </html>
