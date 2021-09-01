@@ -13,7 +13,7 @@ body{
 form{
     background-color:rgba(0, 238, 255, 0.60);
     width: 400px;
-    height: 500px;
+    height: 600px;
     top: 0;
     bottom: 0;
     left: 0;
@@ -34,18 +34,18 @@ form div{
     text-align: center;
     padding: 5px;
 }
-#username,#password{
-    width: 220px;
+#text,#password{
+    width: 50%;
     height: 30px;
     border-radius: 10px;
     border: none;
     background-color: rgba(255, 255, 255, 0.80.6);
-    margin-left: 90px;
+    text-align: center;
+    margin:auto 25%;
 }
-#SignUp{
-    margin-top: 30px;
-    margin-left: 120px;
+#submit{
     display: inline-block;
+    width: 50%;
     border-radius: 15px;
     font-size: 40px;
     text-align: center;
@@ -54,9 +54,58 @@ form div{
     background:blue;
     color: white;
     border:blue;
+    margin: 20px 25%;
 }
-#SignUp:hover{
+#submit:hover{
     background:white;
     color: blue;
     border: white;
+}
+.form-control {
+	overflow: hidden;
+    height: 35px;
+	width: 200px;
+	margin: 0 25%;
+	text-align: center;
+}
+.form-control select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+.form-control select::-ms-expand {
+    display: none;
+}
+.form-control{
+	position: relative;
+	border-radius: 2px;
+	border: 2px solid #da3c41;
+  border-radius: 50px;
+	background: #ffffff;
+}
+.form-control.cp_sl04::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.8em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #da3c41;
+	pointer-events: none;
+}
+.form-control.cp_sl04 select {
+	padding: 8px 38px 8px 8px;
+	color: #da3c41;
 }
