@@ -1,5 +1,6 @@
 import {fetchJSON} from "https://js.sabae.cc/fetchJSON.js";
 let submit = document.getElementById('submit')
+
         
 submit.onclick = async () => {
     console.log("click!!")
