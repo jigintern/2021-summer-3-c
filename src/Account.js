@@ -56,7 +56,38 @@ export class Account {
 
         return "次の試合を追加しました：\"" + name +"\"";
     }
+
+    add_sports(name,userid){
+        this.db.query("INSERT INTO sports (name,userid) VALUES(?,?)",[name,userid])
+
+        return "次のスポーツを追加しました：\"" + name +"\"";
+    }
     
+    findsports(userid){
+        const sports = this.get_db().query("SELECT name FROM sports WHERE userid =" + userid + ";");
+
+        var i = 0;
+        for(const s of sports){
+            return sports;
+
+            i+=1;
+        }
+        if(i == 0){
+            return null;
+        }
+    }
+
+    findusersports(userid,name){
+        const sports = this.get_db().query("SELECT * FROM sports WHERE name = '" + name + "' AND userid = " + userid + ";");
+        var i = 0;
+        for(const s of sports){
+            return null;
+            i+=1;
+        }
+        if(i == 0){
+            return sports;
+        }
+    }
 
     findusername(username){
         const userdata = this.get_db().query("SELECT * FROM user_data WHERE username = '" + username +"';");

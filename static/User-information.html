@@ -5,7 +5,7 @@
         <title>User</title>
     </head>
     <body>
-        <script type="module" src="js/User-information.js" async></script>
+        
         <h1>User</h1>
         <form>
             
@@ -19,7 +19,23 @@
             <!--マッチングエリア-->
             <div id="area">マッチングエリア：</div>
 
+            <div id="sports">プレイしているスポーツ一覧
+                <form class="box" onsubmit="return false">
+                    <select id="sportslist">
+                        <option value="サッカー">サッカー</option>
+                        <option value="バドミントン">バドミントン</option>
+                    </select>
+                    
+                    <input type="submit" id = "submit" name="add" value="add_sports">
+                </form>
+            </div>
+
+            <ul>
+            <div id="playsports"></div>
+            </ul>
+
+            <script type="module" src="js/User-information.js" async></script>
+            
         </form>
-        
     </body>
 </html>

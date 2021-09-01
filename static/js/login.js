@@ -30,6 +30,8 @@ submit.onclick = async () => {
     sessionStorage.setItem("rate", account[3]);
     sessionStorage.setItem("evaluation",account[4]);
     sessionStorage.setItem("status",account[5]);
+    sessionStorage.setItem("prefecture",account[6]);
+    sessionStorage.setItem("city",account[7]);
     alert("ログインが完了しました。");
 
     
