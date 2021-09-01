@@ -28,3 +28,35 @@ form h1{
     text-align: center;
     padding-top: 60px;
 }
+form div{
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+#username,#password{
+width: 220px;
+height: 30px;
+border-radius: 10px;
+border: none;
+background-color: rgba(255, 255, 255, 0.80.6);
+margin-left: 90px;
+}
+#SignUp{
+margin-top: 30px;
+margin-left: 120px;
+display: inline-block;
+border-radius: 15px;
+font-size: 40px;
+text-align: center;
+cursor: pointer;
+padding: 15px;
+background:blue;
+color: white;
+border:blue;
+}
+#SignUp:hover{
+background:white;
+color: blue;
+border: white;
+}
