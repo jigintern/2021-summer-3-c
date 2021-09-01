@@ -15,7 +15,9 @@ class MyServer extends Server{
             case "/api/account/add":
                 return this.account.add(
                     req['username'],
-                    req['password']
+                    req['password'],
+                    req['prefecture'],
+                    req['city']
                 );
             case "/api/account/findusername":
                 return this.account.findusername(
