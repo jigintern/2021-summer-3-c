@@ -11,34 +11,36 @@ db.query(`
   )
 `)*/
 //ログインユーザーのidを取得
-const UserId = sessionStorage.getItem('user_id');
+//const UserId = sessionStorage.getItem('user_id');
 
 function Matching(spo) { //マッチング
     del();//今ある表の初期化
 
-    let tr1 = document.createElement('tr');
-    let tr2 = document.createElement('tr');
-    let td1 = document.createElement('td');
-    let td2 = document.createElement('td');
-    let td3 = document.createElement('td');
-    let td4 = document.createElement('td');
-    let td5 = document.createElement('td');
-    let td6 = document.createElement('td');
     //ここから
-    td1.textContent = '〇〇';
-    tr1.appendChild(td1);
-    td2.textContent = '××';
-    tr1.appendChild(td2);
-    td3.textContent = '▽△';
-    tr1.appendChild(td3);
-    document.getElementById("match").appendChild(tr1);
-    td4.textContent = '〇〇';
-    tr2.appendChild(td4);
-    td5.textContent = '××';
-    tr2.appendChild(td5);
-    td6.textContent = '▽△';
-    tr2.appendChild(td6);
-    document.getElementById("match").appendChild(tr2);
+    /*   let tr1 = document.createElement('tr');
+       let tr2 = document.createElement('tr');
+       let td1 = document.createElement('td');
+       let td2 = document.createElement('td');
+       let td3 = document.createElement('td');
+       let td4 = document.createElement('td');
+       let td5 = document.createElement('td');
+       let td6 = document.createElement('td');*/
+
+    /*  td1.textContent = '〇〇';
+      tr1.appendChild(td1);
+      td2.textContent = '××';
+      tr1.appendChild(td2);
+      td3.textContent = '▽△';
+      tr1.appendChild(td3);
+      document.getElementById("match").appendChild(tr1);
+      td4.textContent = '〇〇';
+      tr2.appendChild(td4);
+      td5.textContent = '××';
+      tr2.appendChild(td5);
+      td6.textContent = '▽△';
+      tr2.appendChild(td6);
+      document.getElementById("match").appendChild(tr2);*/
+
     //ここまで表示テスト
 
     /*   //データベースからデータを読み出す
@@ -64,12 +66,11 @@ function Matching(spo) { //マッチング
 }
 
 function del() {
-    location.reload();
-    /*const table = document.getElementById('match');
+
+    const table = document.getElementById('match');
     const row = table.rows.length;
     for (let i = row; i > 1; i--) {
         table.deleteRow(1);
-        console.log(i);
-    }*/
-    setTimeOut('console.log("待機中")', 2000);
+    }
+
 }
