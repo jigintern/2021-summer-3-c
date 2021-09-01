@@ -1,20 +1,13 @@
 //データベースに接続
-import { DB } from "https://deno.land/x/sqlite@v3.0.0/mod.ts"
-const db = new DB("data.db");
+import { fetchJSON } from "https://js.sabae.cc/fetchJSON.js";
 
-// 作ってなければスポーツテーブルを作成
-db.query(`
-  create table if not exists sport (
-    id integer primary key autoincrement,
-    sport
-  )
-`)
-//ログインユーザーのidを取得
-const UserId = sessionStorage.getItem('user_id');
+//const UserId = sessionStorage.getItem('user_id');
 
 export function Matching(spo) { //マッチング
     del();//今ある表の初期化
-
+    const lists = await fetchJSON("api/matcing/find_userid_bysports", {
+        sport: sport.value,
+    });
     /*
     let tr1 = document.createElement('tr');
     let td1 = document.createElement('td');
@@ -30,9 +23,9 @@ export function Matching(spo) { //マッチング
 
 
     //データベースからデータを読み出す
-    const lists = db.queryEntries("select name,place,rate from sports_table where sports = :sport", {
+    /*const lists = db.queryEntries("select id from sports_table where sports = :sport", {
         sport: "spo"
-    })
+    })*/
 
     for (const list of lists) {
         if (list.id == UserId)
