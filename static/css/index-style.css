@@ -6,7 +6,7 @@
 }
 /*全体*/
 body{
-background-image: url(background.png);
+background-image: url(../img/background.png);
 background-size: auto;
 background-repeat: repeat;
 }

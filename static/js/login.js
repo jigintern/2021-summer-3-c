@@ -9,28 +9,31 @@ let submit = document.getElementById('submit');
 
 submit.onclick = async () => {
   console.log("click!!");
-  if(text.value == null || password.value == null){
-      location.reload();
-      alert("ユーザー名、パスワードを入力してください。");
-  }
+  if(text.value == "" || password.value == ""){
+    location.reload();
+    alert("ユーザー名またはパスワードが未入力です。");
+}
   else{
   const account = await fetchJSON("api/account/findaccounts", {
     username: text.value,
+    password: password.value,
   });
-
-  
 
   if(account == null) {
     location.reload();
     alert("ユーザーネームかパスワードが間違っています。");
   } else {
+    console.log("テスト");
+    console.log(account);
+    sessionStorage.setItem("userid", account[0]);
+    sessionStorage.setItem("username", account[1]);
+    sessionStorage.setItem("rate", account[3]);
+    sessionStorage.setItem("evaluation",account[4]);
+    sessionStorage.setItem("status",account[5]);
     alert("ログインが完了しました。");
-    sessionStorage.setItem("userid", account.id);
-    sessionStorage.setItem("username", account.username);
-    sessionStorage.setItem("rate", account.rate);
-    sessionStorage.setItem("evaluation",account.evaluation)
-    console.log(account)
-    location.href = "/home.html"
+
+    
+    location.href = "/home.html";
   }
 }
 }
