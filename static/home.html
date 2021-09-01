@@ -12,9 +12,9 @@
         <!--ユーザー情報ボタン-->
         <p><a href="User-information.html">ユーザー情報</a></p>
         <!--サッカーマッチングボタン-->
-        <button type="button" onclick="Matching('soccer')">サッカー</button>
+        <button type="button" id="soccer">サッカー</button>
         <!--バドミントンマッチングボタン-->
-        <button type="button" onclick="Matching('badminton')">バドミントン</button>
+        <button type="button" id="badminton">バドミントン</button>
     </form>
     <table id="match">
         <tr>
@@ -23,7 +23,15 @@
             <th>評価</th>
         </tr>
     </table>
-    <script src="js/matching.js"></script>
+    <script type="module">
+        import { Matching } from "./js/matching.js"
+        soccer.onclick = function () {
+            Matching("soccer");
+        }
+        badminton.onclick = function () {
+            Matching("badminton");
+        }
+    </script>
 </body>
 
 </html>
