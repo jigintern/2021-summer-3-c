@@ -1,3 +1,15 @@
+import {fetchJSON} from "https://js.sabae.cc/fetchJSON.js";
+
+
+var userid = Number(sessionStorage.getItem("userid"));
+
+const test = await fetchJSON("api/account/matchcheck", {
+    userid: userid 
+    });
+if(test != null){
+    document.getElementById('alarm').innerHTML = "<a href='request.html'> 対戦依頼が届いています！ </a>"  ;
+}
+
 let soccer = document.getElementById('soccer');
 let badminton = document.getElementById('badminton');
 let tennis = document.getElementById('tennis');
