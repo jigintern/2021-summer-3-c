@@ -1,5 +1,8 @@
 import {fetchJSON} from "https://js.sabae.cc/fetchJSON.js";
 
+
+document.getElementById('match').innerHTML = "ユーザー名：" +  sessionStorage.getItem("enemyname") + "さんに試合を申し込みます。" ;
+
 const getdata = () =>{
     let matchname  = document.getElementById("matchname");
     let date       = document.getElementById("date");
@@ -25,6 +28,7 @@ submit.onclick = async () => {
             time:      time.value,
             place:     place.value,
             ratematch: ratematch.value,
+            status: "false",
         });
         alert("試合が申し込まれました！");
         location.href = "/home.html" //マッチ作成のURL

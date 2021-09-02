@@ -53,8 +53,8 @@ export class Account {
         return "次のアカウントを追加しました：\"" + username + "\"";
     }
 
-    add_match(name,userid,enemyid,date,time,place,ratematch){
-        this.db.query("INSERT INTO matchlog (name,userid,enemyid,date,time,place,ratematch,status,end) VALUES(?,?,?,?,?,?,?,?,?,?)",[name,userid,enemyid,date,time,place,ratematch,"incomplete","false","NULL"])
+    add_match(name,userid,enemyid,date,time,place,ratematch,status){
+        this.db.query("INSERT INTO matchlog (name,userid,enemyid,date,time,place,ratematch,status,end,result) VALUES(?,?,?,?,?,?,?,?,?,?)",[name,userid,enemyid,date,time,place,ratematch,status,"false","NULL"])
 
         return "次の試合を追加しました：\"" + name +"\"";
     }
@@ -139,19 +139,9 @@ export class Account {
     }
 
     find_users_byuserid(userid){
-        //var i =0;
         var text ="SELECT * FROM user_data WHERE id = " + userid + ";";
-        /*for(const u of userid){
-            u = Number(u);
-            if(i==0){
-                text = text + "userid = " + u;
-            }
-            else{
-                text = text + " || userid = " + u;
-            } 
-        }
-        text = text + " ;";
-        */
+        text + " ;";
+        
         const users = this.get_db().query(text);
 
         return users;
