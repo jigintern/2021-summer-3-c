@@ -6,22 +6,26 @@
 }
 /*全体*/
 body{
-    background-image: url(../img/background.png);
-    background-size: auto;
-    background-repeat: repeat;
-    }
+  background-image: url(../img/background.png);
+  background-size: auto;
+  background-repeat: repeat;
+  margin: 0;
+}
+header{
+  padding: 10px;
+  background-color: rgb(84, 143, 211);
+  margin-bottom: 10px;
+}
 /*h1*/
 h1{
     font-size: 50px;
     color: rgb(255, 255, 255);
     text-align: center;
     padding: 10px;
-    background-color: rgba(0, 238, 255, 0.70);
+    background-color: rgba(0, 238, 255, 0.90);
     width: 300px;
     margin: auto;
     border-radius: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 /* === ボタンを表示するエリア ============================== */
 .switchArea {

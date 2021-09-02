@@ -51,13 +51,13 @@ font-size: 40px;
 text-align: center;
 cursor: pointer;
 padding: 15px;
-background:blue;
+background:rgba(0, 0, 255, 0.8);
 color: white;
-border:blue;
+border:rgba(0, 0, 255, 0.8);
 }
 #submit:hover{
 background:white;
-color: blue;
+color: rgba(0, 0, 255, 0.8);
 border: white;
 }
 p{
