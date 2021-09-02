@@ -152,8 +152,6 @@ export class Account {
     matchcheck(userid){
         const matches = this.get_db().query("SELECT * FROM matchlog WHERE enemyid = " + userid + " AND status = 'false' ;");
         return matches;
+        
     }
-
-
-
 }
