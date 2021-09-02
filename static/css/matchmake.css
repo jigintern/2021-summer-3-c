@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /*CSS 初期化*/
 *{
-    margin: 0;
     padding: 0;
 }
 /*全体*/
@@ -22,19 +21,19 @@ body{
     text-align:center;
 }
 /*文字の大きさ*/
-.TextSize{
-    font-size: 50px;
-}
-
 h1{
     font-size: 50px;
     color: rgb(0, 0, 0);
-    text-align: center;
     padding: 10px;
     background-color: rgba(0, 238, 255, 0.70);
     width: 310px;
     margin: auto;
     border-radius: 30px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+#match{
+    font-size: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
