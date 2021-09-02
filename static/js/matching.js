@@ -1,60 +1,50 @@
-window.onload = console.log("接続テスト");
+//データベースに接続
+import { fetchJSON } from "https://js.sabae.cc/fetchJSON.js";
 
-/*import { DB } from "https://deno.land/x/sqlite@v3.0.0/mod.ts"
-const db = new DB("data.db");
-
-// 作ってなければスポーツテーブルを作成
-db.query(`
-  create table if not exists sport (
-    id integer primary key autoincrement,
-    sport 
-  )
-`)
-//ログインユーザーのidを取得
-const UserId = sessionStorage.getItem('user_id');*/
-
-function Matching(spo) {
-    del();
-
-    let tr = document.createElement('tr');
-    let th1 = document.createElement('th');
-    let th2 = document.createElement('th');
-    let th3 = document.createElement('th');
-
-    th1.textContent = '名前';
-    tr.appendChild(th1);
-    th2.textContent = '場所';
-    tr.appendChild(th2);
-    th3.textContent = '評価';
-    tr.appendChild(th3);
-    document.getElementById("match").appendChild(tr);
+export function Matching(spo) { //マッチング
+    del();//今ある表の初期化
+    const MyId = sessionStorage.getItem('userid');
+    const MyName = sessionStorage.getItem('username');
+    const MyRate = sessionStorage.getItem('rate');
+    const MyEvaluation = sessionStorage.getItem('evaluation');
+    const MyStatus = sessionStorage.getItem('status');
+    const MyPrefecture = sessionStorage.getItem('prefecture');
+    const MyCity = sessionStorage.getItem('city');
+    const td1 = document.createElement('td');
+    const td2 = document.createElement('td');
+    const td3 = document.createElement('td');
 
 
-    /*データベースからデータを読み出す*/
-    /*const lists = db.queryEntries("select name,place,rate from sports_table where sports = :sport", {
-        sport: "s"
-    })*/
+    const UserIds = await fetchJSON("api/matcing/find_userid_bysports", {
+        sportsname: spo,
+    });
 
-    /*for (const list of lists) {
-        if (list.id == user_id)
+    for (const UserId of UserIds) {
+        if (UserId == MyId)
             continue;
-        let td1 = document.createElement('td');
-        let td2 = document.createElement('td');
-        let td3 = document.createElement('td');
-        td1.textContent = list.name;
+
+        const UserName = await fetchJSON("/api/account/findsports", {
+            userid: UserId,
+        });
+        const list = await fetchJSON("/api/account/findusername", {
+            username: UserName,
+        });
+        td1.textContent = list.username;
         tr.appendChild(td1);
-        td2.textContent = list.place;
+        td2.textContent = list.prefecture + list.city;
         tr.appendChild(td2);
-        td3.textContent = list.rate;
+        td3.textContent = list.evaluation;
         tr.appendChild(td3);
         table.appendChild(tr);
-    }*/
 
+    }
 }
 
 function del() {
-    let table = document.getElementById('match');
-    let row = table.rows.length;
-    while (row > 1)
-        table.deleteRow(row - 1);
+    const table = document.getElementById('match');
+    const row = table.rows.length;
+
+    for (let i = row; i > 1; i--) {
+        table.deleteRow(1);
+    }
 }

@@ -6,8 +6,8 @@
     <title>home</title>
     <link rel="stylesheet" href="css/home.css">
 </head>
-
 <body>
+    <h1>home</h1>
     <script type="module" src="js/test.js" async></script>
     <h1>home</h1>
     <form>
@@ -33,6 +33,14 @@
             <th>評価</th>
         </tr>
     </table>
-    <script src="js/matching.js"></script>
+    <script type="module">
+        import { Matching } from "./js/matching.js"
+        soccer.onclick = function () {
+            Matching("soccer");
+        }
+        badminton.onclick = function () {
+            Matching("badminton");
+        }
+    </script>
 </body>
 </html>
