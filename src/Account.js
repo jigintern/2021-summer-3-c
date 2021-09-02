@@ -54,7 +54,7 @@ export class Account {
     }
 
     add_match(name,userid,enemyid,date,time,place,ratematch){
-        this.db.query("INSERT INTO matchlog (name,userid,enemyid,date,time,place,ratematch,status,end) VALUES(?,?,?,?,?,?,?,?,?,?)",[name,userid,enemyid,date,time,place,ratematch,"incomplete","false","NULL"])
+        this.db.query("INSERT INTO matchlog (name,userid,enemyid,date,time,place,ratematch,status,end,result) VALUES(?,?,?,?,?,?,?,?,?,?)",[name,userid,enemyid,date,time,place,ratematch,"incomplete","false","NULL"])
 
         return "次の試合を追加しました：\"" + name +"\"";
     }

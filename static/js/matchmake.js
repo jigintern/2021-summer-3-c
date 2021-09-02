@@ -1,5 +1,8 @@
 import {fetchJSON} from "https://js.sabae.cc/fetchJSON.js";
 
+
+document.getElementById('match').innerHTML = "ユーザー名：" +  sessionStorage.getItem("enemyname") + "さんに試合を申し込みます。" ;
+
 const getdata = () =>{
     let matchname  = document.getElementById("matchname");
     let date       = document.getElementById("date");
