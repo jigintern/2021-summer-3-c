@@ -25,6 +25,15 @@ form div{
     margin:0 auto;
     text-align:center;
 }
+#home{
+    float: left;
+    font-size: 50px;
+    border-radius: 30px;
+    background-color: rgba(0, 238, 255, 0.70);
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
 /*文字の大きさ*/
 h1{
     font-size: 50px;
