@@ -36,7 +36,8 @@ export class Account {
             ratematch TEXT,
             status TEXT,
             end TEXT,
-            result TEXT
+            result TEXT,
+            sports TEXT
             )
         `);
     }
@@ -53,8 +54,8 @@ export class Account {
         return "次のアカウントを追加しました：\"" + username + "\"";
     }
 
-    add_match(name,userid,enemyid,date,time,place,ratematch,status){
-        this.db.query("INSERT INTO matchlog (name,userid,enemyid,date,time,place,ratematch,status,end,result) VALUES(?,?,?,?,?,?,?,?,?,?)",[name,userid,enemyid,date,time,place,ratematch,status,"false","NULL"])
+    add_match(name,userid,enemyid,date,time,place,ratematch,status,sports){
+        this.db.query("INSERT INTO matchlog (name,userid,enemyid,date,time,place,ratematch,status,end,result,sports) VALUES(?,?,?,?,?,?,?,?,?,?,?)",[name,userid,enemyid,date,time,place,ratematch,status,"false","NULL",sports])
 
         return "次の試合を追加しました：\"" + name +"\"";
     }
@@ -124,19 +125,18 @@ export class Account {
 
     updatedata(tablename,id,key,value){
         var type = typeof(value);
-
         if(type == 'string'){
-        this.db.query("UPDATE " + tablename + " SET " + key + " = '" + value +"' WHERE id = " + id + ";");
+            this.db.query("UPDATE " + tablename + " SET " + key + " = '" + value +"' WHERE id = " + id + ";");
         }
         else{
-        value = Number(value);
-        this.db.query(" UPDATE " + tablename + " SET " + key + " = " + value + " WHERE id = " + id + ";");
+            this.db.query("UPDATE " + tablename + " SET " + key + " = " + value + " WHERE id = " + id + ";");
         }
+        return "データベースを更新しました";
 
     }
 
-    find_userid_bysports(sportsname){
-        const users = this.get_db().query("SELECT userid FROM sports WHERE name = '" + sportsname + "';");
+    find_userid_bysports(userid,sportsname){
+        const users = this.get_db().query("SELECT userid FROM sports WHERE userid != " + userid + " AND name = '" + sportsname + "';");
         return users;
     }
 
@@ -151,7 +151,16 @@ export class Account {
 
     matchcheck(userid){
         const matches = this.get_db().query("SELECT * FROM matchlog WHERE enemyid = " + userid + " AND status = 'false' ;");
-        return matches;
+        var i = 0;
+
+        for (const m of matches){
+            return matches;  
+
+            i += 1;
+        }
+        if (i == 0) {
+            return null;
+        }
         
     }
 }

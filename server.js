@@ -29,7 +29,8 @@ class MyServer extends Server{
                     req['time'],
                     req['place'],
                     req['ratematch'],
-                    req['status']
+                    req['status'],
+                    req['sports']
                 );
             
             case "/api/account/add_sports":
@@ -68,6 +69,7 @@ class MyServer extends Server{
 
             case "/api/account/find_userid_bysports":
                 return this.account.find_userid_bysports(
+                    req['userid'],
                     req['sportsname']
                 )
             
@@ -75,6 +77,12 @@ class MyServer extends Server{
                 return this.account.find_users_byuserid(
                     req['userid']
                 )
+            
+            case "/api/account/matchcheck":
+                return this.account.matchcheck(
+                    req['userid']
+                )
+            
             
             
             default:
