@@ -64,6 +64,8 @@ export class Account {
 
         return "次のスポーツを追加しました：\"" + name +"\"";
     }
+
+
     
     findsports(userid){
         const sports = this.get_db().query("SELECT name FROM sports WHERE userid =" + userid + ";");
@@ -147,6 +149,9 @@ export class Account {
         return users;
     }
 
-
-
+    matchcheck(userid){
+        const matches = this.get_db().query("SELECT * FROM matchlog WHERE enemyid = " + userid + " AND status = 'false' ;");
+        return matches;
+        
+    }
 }
