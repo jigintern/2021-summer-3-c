@@ -9,7 +9,21 @@ body{
     background-image: url(../img/background.png);
     background-size: auto;
     background-repeat: repeat;
-    }
+    min-height: 100vh;
+}
+header{
+
+    background-color: rgba(255, 255, 255, 0);
+}
+#home{
+    float: left;
+    font-size: 50px;
+    border-radius: 30px;
+    background-color: rgba(0, 238, 255, 0.70);
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
 h1{
     font-size: 50px;
     color: rgb(0, 0, 0);
@@ -23,14 +37,82 @@ h1{
     margin-bottom: 10px;
 }
 div{
+    margin: auto;
     text-align: center;
     font-size: 30px;
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 10px;
-    background-color: white;
-    margin: auto;
 }
-form{
-    display: inline-block;
+main{
     margin: 0 auto;
+    width: 50%;
+    background-color:lightblue;
+    border-radius: 20%;
 }
+#sportslist {
+    font-size: 30px;
+	overflow: hidden;
+    height: 50px;
+	width: 300px;
+	margin: 30px 25%;
+	text-align: center;
+}
+#sportslist select {
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+	background: transparent;
+	background-image: none;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+#sportslist select::-ms-expand {
+    display: none;
+}
+#sportslist{
+	position: relative;
+	border-radius: 2px;
+	border: 2px solid #da3c41;
+  border-radius: 50px;
+	background: #ffffff;
+}
+#sportslist::before {
+	position: absolute;
+	top: 0.8em;
+	right: 0.8em;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid #da3c41;
+	pointer-events: none;
+}
+#sportslist select {
+	padding: 8px 38px 8px 8px;
+	color: #da3c41;
+}
+#submit{
+    margin: 10px;
+
+    display: inline-block;
+    border-radius: 15px;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px;
+    background:blue;
+    color: white;
+    border:blue;
+    }
+    #submit:hover{
+    background:white;
+    color: blue;
+    border: white;
+    }

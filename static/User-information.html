@@ -6,30 +6,34 @@
         <link rel="stylesheet" href="css/User-infomation-style.css">
     </head>
     <body>
-        
+        <header>
+        <a href="home.html" id="home">home</a>
         <h1>User</h1>
+        </header>
         <form>
-            
-            <div id="status">ステータス：</div>
-            <!--ユーザー名-->
-            <div id="username">ユーザー名：</div>
-            <!--レート-->
-            <div id="rate">レート：</div>
-            <!--評価-->
-            <div id="evaluation">評価：</div>
-            <!--マッチングエリア-->
-            <div id="area">マッチングエリア：</div>
+            <main>
+                <div id="status">ステータス：</div><br>
+                <!--ユーザー名-->
+                <div id="username">ユーザー名：</div><br>
+                <!--レート-->
+                <div id="rate">レート：</div><br>
+                <!--評価-->
+                <div id="evaluation">評価：</div><br>
+                <!--マッチングエリア-->
+                <div id="area">マッチングエリア：</div><br>
 
-            <div id="sports">プレイしているスポーツ一覧
-                <form class="box" onsubmit="return false">
-                    <select id="sportslist">
-                        <option value="サッカー">サッカー</option>
-                        <option value="バドミントン">バドミントン</option>
-                    </select>
-                    
-                    <input type="submit" id = "submit" name="add" value="add_sports">
-                </form>
-            </div>
+                <div id="sports">プレイしているスポーツ一覧
+                    <br>
+                    <form class="box" onsubmit="return false">
+                        <select id="sportslist">
+                            <option value="サッカー">サッカー</option>
+                            <option value="バドミントン">バドミントン</option>
+                        </select>
+                        <br>
+                        <input type="submit" id = "submit" name="add" value="add_sports">
+                    </form>
+                </div>
+            </main>
 
             <ul>
             <div id="playsports"></div>
