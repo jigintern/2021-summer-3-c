@@ -12,7 +12,6 @@ for(const t of test){
     const user =  await fetchJSON("api/account/find_users_byuserid", {
         userid: t[0]
         });
-    
 
     
     for(const u of user){

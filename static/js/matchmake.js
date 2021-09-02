@@ -29,6 +29,7 @@ submit.onclick = async () => {
             place:     place.value,
             ratematch: ratematch.value,
             status: "false",
+            sports: sessionStorage.getItem("sports")
         });
         alert("試合が申し込まれました！");
         location.href = "/home.html" //マッチ作成のURL
