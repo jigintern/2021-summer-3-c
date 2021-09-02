@@ -4,17 +4,27 @@
 <head>
     <meta charset="utf-8">
     <title>home</title>
+    <link rel="stylesheet" href="css/home.css">
 </head>
-
 <body>
     <h1>home</h1>
+    <script type="module" src="js/test.js" async></script>
+    <h1>home</h1>
     <form>
+        <!--ログイン　ON　OFF-->
+        <div class="switchArea">
+            <input type="checkbox" id="switch1">
+            <label for="switch1"><span></span></label>
+            <div id="swImg"></div>
+        </div>
         <!--ユーザー情報ボタン-->
         <p><a href="User-information.html">ユーザー情報</a></p>
+        <div class="flex">
         <!--サッカーマッチングボタン-->
-        <button type="button" id="soccer">サッカー</button>
-        <!--バドミントンマッチングボタン-->
-        <button type="button" id="badminton">バドミントン</button>
+        <a><button type="button" class="btn btn-flat" onclick="Matching('soccer')"><span>サッカー</span></button></a>
+        <!--バトミントンマッチングボタン-->
+        <a><button type="button" class="btn btn-flat" onclick="Matching('badminton')"><span>バトミントン</span></button></a>
+        </div>
     </form>
     <table id="match">
         <tr>
@@ -33,5 +43,4 @@
         }
     </script>
 </body>
-
 </html>
