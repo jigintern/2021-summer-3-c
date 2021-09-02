@@ -6,7 +6,6 @@ let basketball = document.getElementById('basketball');
 let volleyball = document.getElementById('volleyball');
 let baseball = document.getElementById('baseball');
 
-
 soccer.onclick = async () => {
     sessionStorage.setItem("sports", "サッカー")
     location.href = "/matchgame.html";
