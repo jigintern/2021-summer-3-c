@@ -28,7 +28,8 @@ class MyServer extends Server{
                     req['date'],
                     req['time'],
                     req['place'],
-                    req['ratematch']
+                    req['ratematch'],
+                    req['status']
                 );
             
             case "/api/account/add_sports":

@@ -33,7 +33,9 @@ export class Matching {
             time TEXT,
             place TEXT,
             ratematch TEXT,
-            status TEXT
+            status TEXT,
+            end TEXT,
+            result TEXT
             )
         `);
     }
@@ -44,8 +46,27 @@ export class Matching {
 
     find_userid_bysports(sportsname){
         const users = this.get_db().query("SELECT userid FROM sports WHERE name = '" + sportsname + "';");
+        return users;
+    }
+
+    find_users_byuserid(userid){
+        var i = 0;
+        var text ="SELECT * FROM userdata WHERE ";
+        for(const u of userid){
+            u = Number(u);
+            if(i==0){
+                text = text + "userid = " + u;
+            }
+            else{
+                text = text + " || userid = " + u;
+            } 
+        }
+        text = text + " ;";
+        const users = this.get_db().query(text);
 
         return users;
     }
+
+
 
 }

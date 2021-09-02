@@ -37,5 +37,15 @@ for(const t of test){
         newCell = newRow.insertCell();
         newText = document.createTextNode(u[5]);
         newCell.appendChild(newText);
+
+        newCell = newRow.insertCell();
+        let btn = document.createElement("button");
+        btn.innerHTML = "対戦を申し込む";
+        btn.onclick = async () => {
+            sessionStorage.setItem("enemyid",u[0]);
+            sessionStorage.setItem("enemyname",u[1]);
+            location.href = "/matchmake.html";
+        };
+        newCell.appendChild(btn);
     }
 }
