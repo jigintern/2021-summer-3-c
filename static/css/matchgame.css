@@ -60,3 +60,15 @@ table td{
   background-color: lightblue;
   border: dashed 3px rgba(0, 192, 206, 0.9);
 }
+table td button{
+  margin:auto;
+  border-radius: 15px;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  background:blue;
+  color: white;
+  display: inline-block;
+  border:blue;
+}
