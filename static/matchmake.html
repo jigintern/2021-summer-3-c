@@ -3,19 +3,21 @@
     <head>
         <meta charset="utf-8">
         <title>matchmake</title>
+        <link rel="stylesheet" href="css/matchmake.css">
     </head>
     <body>
-        <h1>対戦申し込み</h1>
+        <h1 class="center TextSize">対戦申し込み</h1>
         <div id="match"></div>
         <form class="box" onsubmit="return false">
+          <div class="center">
             試合名<input type="text" id="matchname" name="matchname" value=""><br><br>
             日付<input type="date" id="date" name="date" value="">
             時間<input type="time" id="time" name="time" step="1" value=""><br>
             対戦場所<input type="text" id="place" name="place" value=""><br>
             レート戦<input type="checkbox" id="ratematch" name="ratematch"><br>
             <input type="submit" id ="submit" name="match make" value="match make"><br>
+          </div>
         </form>
         <script type="module" src="js/matchmake.js" async></script>
     </body>
-</html>
 </html>
