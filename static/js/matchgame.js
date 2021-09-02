@@ -5,6 +5,7 @@ let table = document.getElementById('match');  //表のオブジェクトを取�
 
 
 const test = await fetchJSON("api/account/find_userid_bysports", {
+    userid: userid,
     sportsname: sessionStorage.getItem("sports")
     });
 
@@ -12,7 +13,6 @@ for(const t of test){
     const user =  await fetchJSON("api/account/find_users_byuserid", {
         userid: t[0]
         });
-
     
     for(const u of user){
         let newRow = table.insertRow();
