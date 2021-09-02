@@ -9,9 +9,32 @@ document.getElementById('evaluation').innerHTML = "いいね数：" + sessionSto
 document.getElementById('area').innerHTML = "マッチングエリア：" + sessionStorage.getItem("prefecture") + "　" + sessionStorage.getItem("city");
 
 
-let sportslist = document.getElementById('sportslist');
+const sportslist = document.getElementById('sportslist');
 
 var userid = Number(sessionStorage.getItem("userid"))
+
+const test = await fetchJSON("api/account/findsports", {
+    userid: userid 
+    });
+
+if(test == null){
+
+}
+
+else{
+    for(const u of test){
+        // id属性で要素を取得
+        var textbox_element = document.getElementById('playsports');
+
+        // 新しいHTML要素を作成
+        var new_element = document.createElement('li');
+    
+        new_element.textContent = u;
+        // 指定した要素の中の末尾に挿入
+        textbox_element.appendChild(new_element);
+    }
+}
+
 
 
 
@@ -23,6 +46,7 @@ submit.onclick = async () => {
     }
 
     else{
+        /*
         const sports_name = await fetchJSON("api/account/findusersports",{
             name: sportslist.value,
             userid: userid,
@@ -34,17 +58,15 @@ submit.onclick = async () => {
             alert("選択されたスポーツは追加済みです！");
         }
         
-        else{
+        else{*/
         const sports = await fetchJSON("api/account/add_sports",{
             name: sportslist.value,
             userid: userid,
         });
         alert("スポーツが追加されました！");
         location.reload();
-    }
-
-        
-    }
+    }   
 }
+
 
 

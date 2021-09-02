@@ -65,9 +65,14 @@ class MyServer extends Server{
                     req['value']
                 );
 
-            case "/api/matcing/find_userid_bysports":
-                return this.matching.find_userid_bysports(
+            case "/api/account/find_userid_bysports":
+                return this.account.find_userid_bysports(
                     req['sportsname']
+                )
+            
+            case "/api/account/find_users_byuserid":
+                return this.account.find_users_byuserid(
+                    req['userid']
                 )
             
             
