@@ -14,7 +14,6 @@ export function Matching(spo) { //マッチング
     const td2 = document.createElement('td');
     const td3 = document.createElement('td');
 
-
     const UserIds = await fetchJSON("api/matcing/find_userid_bysports", {
         sportsname: spo,
     });
