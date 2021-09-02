@@ -1,13 +1,13 @@
 import { Server } from "https://js.sabae.cc/Server.js";
 import { Account } from "./src/Account.js";
-import { Match } from "./src/match.js";
+import { Matching } from "./src/Matching.js";
 
 
 class MyServer extends Server{
     constructor(port){
         super(port);
         this.account = new Account;
-        this.match = new Match;
+        this.matching = new Matching;
     }
 
     async api(path,req){
@@ -15,8 +15,39 @@ class MyServer extends Server{
             case "/api/account/add":
                 return this.account.add(
                     req['username'],
-                    req['password']
+                    req['password'],
+                    req['prefecture'],
+                    req['city']
                 );
+
+            case "/api/account/add_match":
+                return this.account.add_match(
+                    req['name'],
+                    req['userid'],
+                    req['enemyid'],
+                    req['date'],
+                    req['time'],
+                    req['place'],
+                    req['ratematch']
+                );
+            
+            case "/api/account/add_sports":
+                return this.account.add_sports(
+                    req['name'],
+                    req['userid']
+                )
+
+            case "/api/account/findsports":
+                return this.account.findsports(
+                    req['userid']
+                )
+
+            case "/api/account/findusersports":
+                return this.account.findusersports(
+                    req['name'],
+                    req['userid']
+                )
+    
             case "/api/account/findusername":
                 return this.account.findusername(
                     req['username']
@@ -33,18 +64,13 @@ class MyServer extends Server{
                     req['key'],
                     req['value']
                 );
-            
-            case "/api/account/add_match":
-                return this.account.add_match(
-                    req['name'],
-                    req['userid'],
-                    req['enemyid'],
-                    req['date'],
-                    req['time'],
-                    req['place'],
-                    req['ratematch']
-                );
 
+            case "/api/matcing/find_userid_bysports":
+                return this.matching.find_userid_bysports(
+                    req['sportsname']
+                )
+            
+            
             default:
                 console.log("予期しないリクエスト",req);
                 break;

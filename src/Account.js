@@ -10,7 +10,9 @@ export class Account {
             password TEXT,
             rate INTEGER,
             evaluation INTEGER,
-            active TEXT
+            active TEXT,
+            prefecture TEXT,
+            city TEXT
             )
         `);
 
@@ -18,14 +20,6 @@ export class Account {
             CREATE TABLE IF NOT EXISTS sports (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
-            userid INTEGER
-            )
-        `);  
-
-        this.db.query(`
-            CREATE TABLE IF NOT EXISTS places (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            place TEXT,
             userid INTEGER
             )
         `);  
@@ -50,8 +44,8 @@ export class Account {
     }
 
 
-    async add(username,password){
-        this.db.query("INSERT INTO user_data (username,password,rate,evaluation,active) VALUES(?,?,?,?,?)",[username,password,0,0,"オンライン"])
+    async add(username,password,prefecture,city){
+        this.db.query("INSERT INTO user_data (username,password,rate,evaluation,active,prefecture,city) VALUES(?,?,?,?,?,?,?)",[username,password,0,0,"オンライン",prefecture,city])
 
 
         return "次のアカウントを追加しました：\"" + username + "\"";
@@ -62,7 +56,38 @@ export class Account {
 
         return "次の試合を追加しました：\"" + name +"\"";
     }
+
+    add_sports(name,userid){
+        this.db.query("INSERT INTO sports (name,userid) VALUES(?,?)",[name,userid])
+
+        return "次のスポーツを追加しました：\"" + name +"\"";
+    }
     
+    findsports(userid){
+        const sports = this.get_db().query("SELECT name FROM sports WHERE userid =" + userid + ";");
+
+        var i = 0;
+        for(const s of sports){
+            return sports;
+
+            i+=1;
+        }
+        if(i == 0){
+            return null;
+        }
+    }
+
+    findusersports(userid,name){
+        const sports = this.get_db().query("SELECT * FROM sports WHERE name = '" + name + "' AND userid = " + userid + ";");
+        var i = 0;
+        for(const s of sports){
+            return null;
+            i+=1;
+        }
+        if(i == 0){
+            return sports;
+        }
+    }
 
     findusername(username){
         const userdata = this.get_db().query("SELECT * FROM user_data WHERE username = '" + username +"';");
