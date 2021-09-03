@@ -22,10 +22,10 @@ submit.onclick = async () => {
         });
 
         //レート
-        ratematch = sessionStorage.getItem("ratematch");
+        var ratematch = sessionStorage.getItem("ratematch");
         
         if(ratematch == "on"){
-            rate = Number(sessionStorage.getItem("rate"));
+            var rate = Number(sessionStorage.getItem("rate"));
             if(result.value == "win"){
                 rate += 50;
             }else if(rate >= 50){
@@ -41,7 +41,9 @@ submit.onclick = async () => {
                 id:        sessionStorage.getItem("userid"),
                 key:       "rate",
                 value:     rate,
-            });        
+            });
+            
+            sessionStorage.setItem("rate",rate);
         }
         
         alert("結果が反映されました！");

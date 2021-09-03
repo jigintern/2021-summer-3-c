@@ -3,7 +3,6 @@ import {fetchJSON} from "https://js.sabae.cc/fetchJSON.js";
 var userid = Number(sessionStorage.getItem("userid"))
 let table = document.getElementById('match');  //表のオブジェクトを取得
 var rate;
-let btn;
 
 
 const matches = await fetchJSON("api/account/resultmatchcheck", {
@@ -13,7 +12,6 @@ const matches = await fetchJSON("api/account/resultmatchcheck", {
 for(const m of matches){
     let newRow = table.insertRow();
     
-    btn = document.createElement("button");
     let newCell = newRow.insertCell();
     let newText = document.createTextNode(m[1]);
     newCell.appendChild(newText);
@@ -23,6 +21,7 @@ for(const m of matches){
         });
 
     for(const u of user){
+        var id = u[0]
         var name = u[1];
     }
 
@@ -55,14 +54,14 @@ for(const m of matches){
     
 
     newCell = newRow.insertCell();
+    var btn = document.createElement("button");
     btn.innerHTML = "結果を送信";
     btn.onclick = async () => {
         sessionStorage.setItem("matchid",m[0])
-        sessionStorage.setItem("enemyid",u[0])
+        sessionStorage.setItem("enemyid",id)
         sessionStorage.setItem("ratematch",m[7])
         location.href = "/matchresult.html"
     };
-
     newCell.appendChild(btn);
     
 }
