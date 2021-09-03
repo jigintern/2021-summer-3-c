@@ -11,9 +11,9 @@
     <script type="module" src="js/test.js" async></script>
     <!--<div id="alarm">></div>-->
     <header>
-    <h1>match app</h1>
-    <div id="alarm"></div>
-    <div id="alarm2"></div>
+        <h1>match app</h1>
+        <div id="alarm"></div>
+        <div id="alarm2"></div>
     </header>
     <form>
         <!--ログイン　ON　OFF-->
@@ -27,12 +27,16 @@
 
         <div class="select-area">
             <h4>マッチング範囲</h4>
-            <div><p>都道府県</p></div>
+            <div>
+                <p>都道府県</p>
+            </div>
             <select name="select_prefecture" id="select_prefecture" class="form-control">
                 <option value="">都道府県を選択</option>
             </select>
             <br>
-            <div><p>市区町村</p></div>
+            <div>
+                <p>市区町村</p>
+            </div>
             <select name="select_city" id="select_city" class="form-control">
                 <option value="">市区町村を選択</option>
             </select>
@@ -55,10 +59,11 @@
 
             <button type="button" class="btn btn-flat" id="volleyball"><img
                     src="img/volleyball.png" /><br>バレーボール</button>
-            
+
             <button type="button" class="btn btn-flat" id="rugby"><img src="img/rugby.png" /><br>ラグビー</button>
 
-            <button type="button" class="btn btn-flat" id="Ice hockey"><img src="img/Ice hockey.png" /><br>アイスホッケー</button>
+            <button type="button" class="btn btn-flat" id="Ice_hockey"><img
+                    src="img/Ice hockey.png" /><br>アイスホッケー</button>
 
             <button type="button" class="btn btn-flat" id="baseball"><img src="img/baseball.png" /><br>野球</button>
         </div>
@@ -67,22 +72,22 @@
     <script src="/js/prefectureCity.js"></script>
 
 
-        <script>
-            $(function() {
-              let initPrefVal = '13';
-              let initCityVal = '113';
-              let valType = 'name';
-      
-              // Create a prefecture select-box.
-              getPrefectureSelection('#select_prefecture', '#select_city', './prefectureCityCode.json', valType, initPrefVal, initCityVal);
-      
-              // Create a city select-box.
-              $('#select_prefecture').on('change', function() {
+    <script>
+        $(function () {
+            let initPrefVal = '13';
+            let initCityVal = '113';
+            let valType = 'name';
+
+            // Create a prefecture select-box.
+            getPrefectureSelection('#select_prefecture', '#select_city', './prefectureCityCode.json', valType, initPrefVal, initCityVal);
+
+            // Create a city select-box.
+            $('#select_prefecture').on('change', function () {
                 getCitySelection('#select_prefecture', '#select_city', './prefectureCityCode.json', valType);
-              });
             });
-      
-        </script>
+        });
+
+    </script>
 </body>
 
 </html>
