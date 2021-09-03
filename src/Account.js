@@ -178,4 +178,18 @@ export class Account {
         }
         
     }
+    endmatchcheck(userid){
+        const matches = this.get_db().query("SELECT * FROM matchlog WHERE enemyid = " + userid + " AND status = 'true' AND end = 'true' ;");
+        var i = 0;
+
+        for (const m of matches){
+            return matches;  
+
+            i += 1;
+        }
+        if (i == 0) {
+            return null;
+        }
+        
+    }
 }

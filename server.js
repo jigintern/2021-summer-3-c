@@ -88,7 +88,10 @@ class MyServer extends Server{
                     req['userid']
                 )
             
-            
+            case "/api/account/endmatchcheck":
+                return this.account.endmatchcheck(
+                    req['userid']
+                )
             
             default:
                 console.log("予期しないリクエスト",req);
