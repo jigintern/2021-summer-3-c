@@ -2,7 +2,7 @@ import {fetchJSON} from "https://js.sabae.cc/fetchJSON.js";
 
 var userid = Number(sessionStorage.getItem("userid"))
 let table = document.getElementById('match');  //表のオブジェクトを取得
-
+var user;
 
 const test = await fetchJSON("api/account/find_userid_bysports", {
     userid: userid,
@@ -10,9 +10,28 @@ const test = await fetchJSON("api/account/find_userid_bysports", {
     });
 
 for(const t of test){
-    const user =  await fetchJSON("api/account/find_users_byuserid", {
-        userid: t[0]
+    if(sessionStorage.getItem("searcharea") == "all"){
+        user =  await fetchJSON("api/account/find_users_byuserid", {
+            userid: t[0]
         });
+    }
+
+    else if(sessionStorage.getItem("searcharea") == "prefecture"){
+        user =  await fetchJSON("api/account/find_users_byuserid_search", {
+            userid: t[0],
+            area: "prefecture",
+            value: sessionStorage.getItem("searchprefecture")
+        });
+    }
+
+    else if(sessionStorage.getItem("searcharea") == "city"){
+        user =  await fetchJSON("api/account/find_users_byuserid_search", {
+            userid: t[0],
+            area: "city",
+            value: sessionStorage.getItem("searchcity")
+        });
+    }
+    
     
     for(const u of user){
         let newRow = table.insertRow();

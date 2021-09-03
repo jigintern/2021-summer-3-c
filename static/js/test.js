@@ -1,5 +1,7 @@
 import {fetchJSON} from "https://js.sabae.cc/fetchJSON.js";
 
+let prefecture = document.getElementById("select_prefecture");
+let city = document.getElementById("select_city");
 
 var userid = Number(sessionStorage.getItem("userid"));
 
@@ -28,35 +30,112 @@ let baseball = document.getElementById('baseball');
 
 soccer.onclick = async () => {
     sessionStorage.setItem("sports", "サッカー")
+    if(prefecture.value == "" && city.value == ""){
+        sessionStorage.setItem("searcharea","all");
+    }
+    else if(prefecture.value != "" && city.value == ""){
+        sessionStorage.setItem("searcharea","prefecture");
+        sessionStorage.setItem("searchprefecture",prefecture.value);
+    }
+    else{
+        sessionStorage.setItem("searcharea","city");
+        sessionStorage.setItem("searchcity",city.value);
+    }
     location.href = "/matchgame.html";
 }
 
 badminton.onclick = async () => {
-    sessionStorage.setItem("sports", "バドミントン")
+    sessionStorage.setItem("sports", "バドミントン");
+    if(prefecture.value == "" || city.value == ""){
+        sessionStorage.setItem("searcharea","all");
+    }
+    else if(prefecture.value != "" && city.value == ""){
+        sessionStorage.setItem("searcharea","prefecture");
+        sessionStorage.setItem("searchprefecture",prefecture.value);
+    }
+    else{
+        sessionStorage.setItem("searcharea","city");
+        sessionStorage.setItem("searchcity",city.value);
+    }
     location.href = "/matchgame.html";
 }
 
 tennis.onclick = async () => {
-    sessionStorage.setItem("sports", "テニス")
+    sessionStorage.setItem("sports", "テニス");
+    if(prefecture.value == "" || city.value == ""){
+        sessionStorage.setItem("searcharea","all");
+    }
+    else if(prefecture.value != "" && city.value == ""){
+        sessionStorage.setItem("searcharea","prefecture");
+        sessionStorage.setItem("searchprefecture",prefecture.value);
+    }
+    else{
+        sessionStorage.setItem("searcharea","city");
+        sessionStorage.setItem("searchcity",city.value);
+    }
     location.href = "/matchgame.html";
 }
 
 tabletennis.onclick = async () => {
-    sessionStorage.setItem("sports", "卓球")
+    sessionStorage.setItem("sports", "卓球");
+    if(prefecture.value == "" || city.value == ""){
+        sessionStorage.setItem("searcharea","all");
+    }
+    else if(prefecture.value != "" && city.value == ""){
+        sessionStorage.setItem("searcharea","prefecture");
+        sessionStorage.setItem("searchprefecture",prefecture.value);
+    }
+    else{
+        sessionStorage.setItem("searcharea","city");
+        sessionStorage.setItem("searchcity",city.value);
+    }
     location.href = "/matchgame.html";
 }
 
 basketball.onclick = async () => {
-    sessionStorage.setItem("sports", "バスケットボール")
+    sessionStorage.setItem("sports", "バスケットボール");
+    if(prefecture.value == "" || city.value == ""){
+        sessionStorage.setItem("searcharea","all");
+    }
+    else if(prefecture.value != "" && city.value == ""){
+        sessionStorage.setItem("searcharea","prefecture");
+        sessionStorage.setItem("searchprefecture",prefecture.value);
+    }
+    else{
+        sessionStorage.setItem("searcharea","city");
+        sessionStorage.setItem("searchcity",city.value);
+    }
     location.href = "/matchgame.html";
 }
 
 volleyball.onclick = async () => {
-    sessionStorage.setItem("sports", "バレーボール")
+    sessionStorage.setItem("sports", "バレーボール");
+    if(prefecture.value == "" || city.value == ""){
+        sessionStorage.setItem("searcharea","all");
+    }
+    else if(prefecture.value != "" && city.value == ""){
+        sessionStorage.setItem("searcharea","prefecture");
+        sessionStorage.setItem("searchprefecture",prefecture.value);
+    }
+    else{
+        sessionStorage.setItem("searcharea","city");
+        sessionStorage.setItem("searchcity",city.value);
+    }
     location.href = "/matchgame.html";
 }
 
 baseball.onclick = async () => {
-    sessionStorage.setItem("sports", "野球")
+    sessionStorage.setItem("sports", "野球");
+    if(prefecture.value == "" || city.value == ""){
+        sessionStorage.setItem("searcharea","all");
+    }
+    else if(prefecture.value != "" && city.value == ""){
+        sessionStorage.setItem("searcharea","prefecture");
+        sessionStorage.setItem("searchprefecture",prefecture.value);
+    }
+    else{
+        sessionStorage.setItem("searcharea","city");
+        sessionStorage.setItem("searchcity",city.value);
+    }
     location.href = "/matchgame.html";
 }
