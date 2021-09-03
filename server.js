@@ -73,6 +73,13 @@ class MyServer extends Server{
                     req['sportsname']
                 )
             
+            case "/api/account/find_users_byuserid_search":
+                return this.account.find_users_byuserid_search(
+                    req['userid'],
+                    req['area'],
+                    req['value']
+                )
+            
             case "/api/account/find_users_byuserid":
                 return this.account.find_users_byuserid(
                     req['userid']

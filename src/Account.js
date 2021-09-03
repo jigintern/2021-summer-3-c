@@ -140,6 +140,14 @@ export class Account {
         return users;
     }
 
+    find_users_byuserid_search(userid,area,value){
+        var text ="SELECT * FROM user_data WHERE id = " + userid + " AND " + area + " = '" + value + "';";
+        
+        const users = this.get_db().query(text);
+
+        return users;
+    }
+
     find_users_byuserid(userid){
         var text ="SELECT * FROM user_data WHERE id = " + userid + ";";
         text + " ;";
