@@ -10,6 +10,14 @@ if(test != null){
     document.getElementById('alarm').innerHTML = "<a href='request.html'> 対戦依頼が届いています！ </a>"  ;
 }
 
+
+const test2 = await fetchJSON("api/account/resultmatchcheck", {
+    userid: userid 
+    });
+if(test2 != null){
+    document.getElementById('alarm2').innerHTML = "<a href='matchlist.html'> 評価未送信の試合があります！ </a>"  ;
+}
+
 let soccer = document.getElementById('soccer');
 let badminton = document.getElementById('badminton');
 let tennis = document.getElementById('tennis');

@@ -3,15 +3,17 @@ import {fetchJSON} from "https://js.sabae.cc/fetchJSON.js";
 var userid = Number(sessionStorage.getItem("userid"))
 let table = document.getElementById('match');  //表のオブジェクトを取得
 var rate;
+let btn;
 
-const matches = await fetchJSON("api/account/matchcheck", {
+
+const matches = await fetchJSON("api/account/resultmatchcheck", {
         userid: userid
     });
 
 for(const m of matches){
     let newRow = table.insertRow();
-    let btn = document.createElement("button");
-
+    
+    btn = document.createElement("button");
     let newCell = newRow.insertCell();
     let newText = document.createTextNode(m[1]);
     newCell.appendChild(newText);
@@ -53,29 +55,12 @@ for(const m of matches){
     
 
     newCell = newRow.insertCell();
-    btn.innerHTML = "承諾";
+    btn.innerHTML = "結果を送信";
     btn.onclick = async () => {
-        const data = await fetchJSON("api/account/add_match", {
-            name:      m[1],
-            userid:    sessionStorage.getItem("userid"),
-            enemyid:   m[2],
-            date:      m[4],
-            time:      m[5],
-            place:     m[6],
-            ratematch: m[7],
-            status: "true",
-            sports: m[11]
-        });
-
-        const update = await fetchJSON("api/account/updatedata", {
-            tablename: "matchlog",
-            id:        m[0],
-            key:       "status",
-            value:     "true",
-        });
-        alert("依頼を承諾しました！");
-        
-        location.href = "/home.html" //マッチ作成のURL
+        sessionStorage.setItem("matchid",m[0])
+        sessionStorage.setItem("enemyid",u[0])
+        sessionStorage.setItem("ratematch",m[7])
+        location.href = "/matchresult.html"
     };
 
     newCell.appendChild(btn);

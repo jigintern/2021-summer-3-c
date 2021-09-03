@@ -83,6 +83,11 @@ class MyServer extends Server{
                     req['userid']
                 )
             
+            case "/api/account/resultmatchcheck":
+                return this.account.resultmatchcheck(
+                    req['userid']
+                )
+            
             
             
             default:
