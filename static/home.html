@@ -26,14 +26,17 @@
         <p><a href="User-information.html">ユーザー情報</a></p>
 
         <div class="select-area">
-            <p>都道府県</p>
+            <h4>マッチング範囲</h4>
+            <div><p>都道府県</p></div>
             <select name="select_prefecture" id="select_prefecture" class="form-control">
                 <option value="">都道府県を選択</option>
             </select>
-            <p>市区町村</p>
+            <br>
+            <div><p>市区町村</p></div>
             <select name="select_city" id="select_city" class="form-control">
                 <option value="">市区町村を選択</option>
             </select>
+            <br>
         </div>
 
         <div class="flex">
@@ -60,6 +63,26 @@
             <button type="button" class="btn btn-flat" id="baseball"><img src="img/baseball.png" /><br>野球</button>
         </div>
     </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/prefectureCity.js"></script>
+
+
+        <script>
+            $(function() {
+              let initPrefVal = '13';
+              let initCityVal = '113';
+              let valType = 'name';
+      
+              // Create a prefecture select-box.
+              getPrefectureSelection('#select_prefecture', '#select_city', './prefectureCityCode.json', valType, initPrefVal, initCityVal);
+      
+              // Create a city select-box.
+              $('#select_prefecture').on('change', function() {
+                getCitySelection('#select_prefecture', '#select_city', './prefectureCityCode.json', valType);
+              });
+            });
+      
+        </script>
 </body>
 
 </html>
