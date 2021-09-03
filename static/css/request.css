@@ -12,14 +12,15 @@ body{
     }
 /*マッチ結果*/
 table{
-        font-size: 50px;
-        margin: 2% auto;
+        font-size: 40px;
+        margin: 4% auto;
         border-collapse: collapse;
         border: solid 5px rgba(0, 192, 206, 0.9);
       }
 h1{
     text-align: center;
     margin-top: 20px;
+    margin-right: 12%;
 }
 *:before,
 *:after {
@@ -38,4 +39,26 @@ table td{
   color: white;
   background-color: lightblue;
   border: dashed 3px rgba(0, 192, 206, 0.9);
+}
+#home{
+  float: left;
+  font-size: 50px;
+  border-radius: 30px;
+  background-color: rgba(0, 238, 255, 0.90);
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+button{
+  margin-top: 20px;
+  border-radius: 15px;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  background:rgba(0, 0, 255, 0.7);
+  color: white;
+  display: inline-block;
+  border:rgba(0, 0, 255, 0.7);
 }
